@@ -25,7 +25,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activitymain)
-
+        //
         // Инициализируем SharedPreferences
         sharedPref = getSharedPreferences("myPrefs", Context.MODE_PRIVATE)
         // Загружаем данные из SharedPreferences
