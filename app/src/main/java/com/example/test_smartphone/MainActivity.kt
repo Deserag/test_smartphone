@@ -31,25 +31,281 @@ class MainActivity : ComponentActivity() {
         // Загружаем данные из SharedPreferences
         loadDataFromPreferences()
 
-        // Находим кнопки и устанавливаем для них обработчики
-        buttons = arrayOf(
-            findViewById(R.id.vid_raspi_1), findViewById(R.id.vid_raspi_2), findViewById(R.id.vid_raspi_3),
-            // ... (добавьте остальные кнопки здесь)
-            findViewById(R.id.vid_raspi_14), findViewById(R.id.vid_raspi_15)
-        )
+        val day_raspi_1: Button =  findViewById(R.id.vid_raspi_1)
 
-        // Находим кнопку для создания нового элемента и устанавливаем для нее обработчик
-        val sozdanie_raspi: Button = findViewById(R.id.createButton)
-        sozdanie_raspi.setOnClickListener{
-            val intent = Intent(this, Raspi::class.java)
-            startActivityForResult(intent, 1)
+        if (nazvanieArray[0].isNotEmpty() && vremiaArray[0] != 0 && colorArray[0].isNotEmpty()) {
+            day_raspi_1.setOnClickListener {
+                val message = "Название: ${nazvanieArray[0]}\nВремя: ${vremiaArray[0]}\nЦвет: ${colorArray[0]}"
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("Данные из массивов")
+                builder.setMessage(message)
+                builder.setPositiveButton("OK") { dialog, which ->
+                    // Действие, которое будет выполняться при нажатии на кнопку "OK"
+                }
+                val dialog = builder.create()
+                dialog.show()
+            }
+        }
+        else {
+            day_raspi_1.visibility = View.GONE // Скрываем кнопку, если массивы пустые
+        }
+        val day_raspi_2: Button = findViewById(R.id.vid_raspi_2)
+
+        if (nazvanieArray.size > 1 && vremiaArray.size > 1  &&
+            nazvanieArray[1].isNotEmpty() && vremiaArray[1] != 0 ) {
+            day_raspi_2.setOnClickListener {
+                val message = "Название: ${nazvanieArray[1]}\nВремя: ${vremiaArray[1]}\nЦвет: ${colorArray[1]}"
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("Данные о дне")
+                builder.setMessage(message)
+                builder.setPositiveButton("OK") { dialog, which ->
+                    // Действие, которое будет выполняться при нажатии на кнопку "OK"
+                }
+                val dialog = builder.create()
+                dialog.show()
+            }
+        } else {
+            day_raspi_2.visibility = View.GONE // Скрываем кнопку, если массивы пустые или второго элемента нет
         }
 
-        // Находим кнопку для изменения элемента и устанавливаем для нее обработчик
-        val izmena: Button = findViewById(R.id.change)
-        izmena.setOnClickListener{
-            val intent = Intent(this,Raspi::class.java)
-            startActivity(intent)
+        val day_raspi_3: Button = findViewById(R.id.vid_raspi_3)
+
+        if (nazvanieArray.size > 2 && vremiaArray.size > 2 && colorArray.size > 2 &&
+            nazvanieArray[2].isNotEmpty() && vremiaArray[2] != 0 && colorArray[2].isNotEmpty()) {
+            day_raspi_3.setOnClickListener {
+                val message = "Название: ${nazvanieArray[2]}\nВремя: ${vremiaArray[2]}\nЦвет: ${colorArray[2]}"
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("Данные о дне")
+                builder.setMessage(message)
+                builder.setPositiveButton("OK") { dialog, which ->
+                    // Действие, которое будет выполняться при нажатии на кнопку "OK"
+                }
+                val dialog = builder.create()
+                dialog.show()
+            }
+        } else {
+            day_raspi_3.isVisible = false
+        }
+
+        val day_raspi_4: Button = findViewById(R.id.vid_raspi_4)
+
+        if (nazvanieArray.size > 3 && vremiaArray.size > 3 && colorArray.size > 3 &&
+            nazvanieArray[3].isNotEmpty() && vremiaArray[3] != 0 && colorArray[3].isNotEmpty()) {
+            day_raspi_4.setOnClickListener {
+                val message = "Название: ${nazvanieArray[3]}\nВремя: ${vremiaArray[3]}\nЦвет: ${colorArray[3]}"
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("Данные о дне")
+                builder.setMessage(message)
+                builder.setPositiveButton("OK") { dialog, which ->
+                    // Действие, которое будет выполняться при нажатии на кнопку "OK"
+                }
+                val dialog = builder.create()
+                dialog.show()
+            }
+        } else {
+            day_raspi_4.visibility = View.GONE // Скрываем кнопку, если массивы пустые или второго элемента нет
+        }
+
+
+        val day_raspi_5: Button = findViewById(R.id.vid_raspi_5)
+
+        if (nazvanieArray.size > 4 && vremiaArray.size > 4 && colorArray.size > 4 &&
+            nazvanieArray[4].isNotEmpty() && vremiaArray[4] != 0 && colorArray[4].isNotEmpty()) {
+            day_raspi_5.setOnClickListener {
+                val message = "Название: ${nazvanieArray[4]}\nВремя: ${vremiaArray[4]}\nЦвет: ${colorArray[4]}"
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("Данные о дне")
+                builder.setMessage(message)
+                builder.setPositiveButton("OK") { dialog, which ->
+                    // Действие, которое будет выполняться при нажатии на кнопку "OK"
+                }
+                val dialog = builder.create()
+                dialog.show()
+            }
+        } else {
+            day_raspi_5.visibility = View.GONE // Скрываем кнопку, если массивы пустые или второго элемента нет
+        }
+        val day_raspi_6: Button =  findViewById(R.id.vid_raspi_6)
+
+        if (nazvanieArray[5].isNotEmpty() && vremiaArray[5] != 0 && colorArray[5].isNotEmpty()) {
+            day_raspi_1.setOnClickListener {
+                val message = "Название: ${nazvanieArray[5]}\nВремя: ${vremiaArray[5]}\nЦвет: ${colorArray[5]}"
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("Данные из массивов")
+                builder.setMessage(message)
+                builder.setPositiveButton("OK") { dialog, which ->
+                    // Действие, которое будет выполняться при нажатии на кнопку "OK"
+                }
+                val dialog = builder.create()
+                dialog.show()
+            }
+        }
+        else {
+            day_raspi_6.visibility = View.GONE // Скрываем кнопку, если массивы пустые
+        }
+        val day_raspi_7: Button = findViewById(R.id.vid_raspi_7)
+
+        if (nazvanieArray.size > 6 && vremiaArray.size > 6  && nazvanieArray[6].isNotEmpty() && vremiaArray[6] != 0 ) {
+            day_raspi_7.setOnClickListener {
+                val message = "Название: ${nazvanieArray[6]}\nВремя: ${vremiaArray[6]}\nЦвет: ${colorArray[6]}"
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("Данные о дне")
+                builder.setMessage(message)
+                builder.setPositiveButton("OK") { dialog, which ->
+                    // Действие, которое будет выполняться при нажатии на кнопку "OK"
+                }
+                val dialog = builder.create()
+                dialog.show()
+            }
+        } else {
+            day_raspi_7.visibility = View.GONE // Скрываем кнопку, если массивы пустые или второго элемента нет
+        }
+
+        val day_raspi_8: Button = findViewById(R.id.vid_raspi_8)
+
+        if (nazvanieArray.size > 7 && vremiaArray.size > 7 && colorArray.size > 7 && nazvanieArray[7].isNotEmpty() && vremiaArray[7] != 0 && colorArray[7].isNotEmpty()) {
+            day_raspi_8.setOnClickListener {
+                val message = "Название: ${nazvanieArray[7]}\nВремя: ${vremiaArray[7]}\nЦвет: ${colorArray[7]}"
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("Данные о дне")
+                builder.setMessage(message)
+                builder.setPositiveButton("OK") { dialog, which ->
+                    // Действие, которое будет выполняться при нажатии на кнопку "OK"
+                }
+                val dialog = builder.create()
+                dialog.show()
+            }
+        } else {
+            day_raspi_8.isVisible = false
+        }
+
+        val day_raspi_9: Button = findViewById(R.id.vid_raspi_9)
+
+        if (nazvanieArray.size > 8 && vremiaArray.size > 8 && colorArray.size > 8 &&
+            nazvanieArray[8].isNotEmpty() && vremiaArray[8] != 0 && colorArray[8].isNotEmpty()) {
+            day_raspi_9.setOnClickListener {
+                val message = "Название: ${nazvanieArray[8]}\nВремя: ${vremiaArray[8]}\nЦвет: ${colorArray[8]}"
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("Данные о дне")
+                builder.setMessage(message)
+                builder.setPositiveButton("OK") { dialog, which ->
+                    // Действие, которое будет выполняться при нажатии на кнопку "OK"
+                }
+                val dialog = builder.create()
+                dialog.show()
+            }
+        } else {
+            day_raspi_9.visibility = View.GONE // Скрываем кнопку, если массивы пустые или второго элемента нет
+        }
+
+
+        val day_raspi_10: Button = findViewById(R.id.vid_raspi_10)
+
+        if (nazvanieArray.size > 9 && vremiaArray.size > 9 && colorArray.size > 9 && nazvanieArray[4].isNotEmpty() && vremiaArray[4] != 0 && colorArray[4].isNotEmpty()) {
+            day_raspi_10.setOnClickListener {
+                val message = "Название: ${nazvanieArray[9]}\nВремя: ${vremiaArray[9]}\nЦвет: ${colorArray[9]}"
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("Данные о дне")
+                builder.setMessage(message)
+                builder.setPositiveButton("OK") { dialog, which ->
+                    // Действие, которое будет выполняться при нажатии на кнопку "OK"
+                }
+                val dialog = builder.create()
+                dialog.show()
+            }
+        } else {
+            day_raspi_10.visibility = View.GONE // Скрываем кнопку, если массивы пустые или второго элемента нет
+        }
+        val day_raspi_11: Button =  findViewById(R.id.vid_raspi_11)
+
+        if (nazvanieArray[10].isNotEmpty() && vremiaArray[10] != 0 && colorArray[10].isNotEmpty()) {
+            day_raspi_11.setOnClickListener {
+                val message = "Название: ${nazvanieArray[10]}\nВремя: ${vremiaArray[10]}\nЦвет: ${colorArray[0]}"
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("Данные из массивов")
+                builder.setMessage(message)
+                builder.setPositiveButton("OK") { dialog, which ->
+                    // Действие, которое будет выполняться при нажатии на кнопку "OK"
+                }
+                val dialog = builder.create()
+                dialog.show()
+            }
+        }
+        else {
+            day_raspi_11.visibility = View.GONE // Скрываем кнопку, если массивы пустые
+        }
+        val day_raspi_12: Button = findViewById(R.id.vid_raspi_12)
+
+        if (nazvanieArray.size > 11 && vremiaArray.size > 11  && nazvanieArray[11].isNotEmpty() && vremiaArray[11] != 0 ) {
+            day_raspi_12.setOnClickListener {
+                val message = "Название: ${nazvanieArray[11]}\nВремя: ${vremiaArray[11]}\nЦвет: ${colorArray[11]}"
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("Данные о дне")
+                builder.setMessage(message)
+                builder.setPositiveButton("OK") { dialog, which ->
+                    // Действие, которое будет выполняться при нажатии на кнопку "OK"
+                }
+                val dialog = builder.create()
+                dialog.show()
+            }
+        } else {
+            day_raspi_12.visibility = View.GONE // Скрываем кнопку, если массивы пустые или второго элемента нет
+        }
+
+        val day_raspi_13: Button = findViewById(R.id.vid_raspi_13)
+
+        if (nazvanieArray.size > 12 && vremiaArray.size > 12 && colorArray.size > 12 && nazvanieArray[12].isNotEmpty() && vremiaArray[12] != 0 && colorArray[12].isNotEmpty()) {
+            day_raspi_13.setOnClickListener {
+                val message = "Название: ${nazvanieArray[12]}\nВремя: ${vremiaArray[12]}\nЦвет: ${colorArray[12]}"
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("Данные о дне")
+                builder.setMessage(message)
+                builder.setPositiveButton("OK") { dialog, which ->
+                    // Действие, которое будет выполняться при нажатии на кнопку "OK"
+                }
+                val dialog = builder.create()
+                dialog.show()
+            }
+        } else {
+            day_raspi_13.isVisible = false
+        }
+
+        val day_raspi_14: Button = findViewById(R.id.vid_raspi_14)
+
+        if (nazvanieArray.size > 13 && vremiaArray.size > 13 && colorArray.size > 13 && nazvanieArray[13].isNotEmpty() && vremiaArray[13] != 0 && colorArray[13].isNotEmpty()) {
+            day_raspi_14.setOnClickListener {
+                val message = "Название: ${nazvanieArray[13]}\nВремя: ${vremiaArray[13]}\nЦвет: ${colorArray[13]}"
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("Данные о дне")
+                builder.setMessage(message)
+                builder.setPositiveButton("OK") { dialog, which ->
+                    // Действие, которое будет выполняться при нажатии на кнопку "OK"
+                }
+                val dialog = builder.create()
+                dialog.show()
+            }
+        } else {
+            day_raspi_14.visibility = View.GONE // Скрываем кнопку, если массивы пустые или второго элемента нет
+        }
+
+
+        val day_raspi_15: Button = findViewById(R.id.vid_raspi_15)
+
+        if (nazvanieArray.size > 14 && vremiaArray.size > 14 && colorArray.size > 14 &&
+            nazvanieArray[14].isNotEmpty() && vremiaArray[14] != 0 && colorArray[14].isNotEmpty()) {
+            day_raspi_15.setOnClickListener {
+                val message = "Название: ${nazvanieArray[14]}\nВремя: ${vremiaArray[4]}\nЦвет: ${colorArray[4]}"
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("Данные о дне")
+                builder.setMessage(message)
+                builder.setPositiveButton("OK") { dialog, which ->
+                    // Действие, которое будет выполняться при нажатии на кнопку "OK"
+                }
+                val dialog = builder.create()
+                dialog.show()
+            }
+        } else {
+            day_raspi_5.visibility = View.GONE // Скрываем кнопку, если массивы пустые или второго элемента нет
         }
 
         // Обновляем отображение кнопок на основе загруженных данных
